@@ -1,0 +1,6 @@
+﻿node_modules/
+.venv/
+*.log
+*.c4z
+dist/
+.DS_Store
