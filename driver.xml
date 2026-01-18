@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<devicedata>
+  <copyright>Copyright 2026 EKONEX by Edmondo Alex Sas. All rights reserved.</copyright>
+  <manufacturer>EKONEX</manufacturer>
+  <model>e-mini_light</model>
+  <creator>EKONEX by Edmondo Alex Sas</creator>
+  <created>1/16/2026 4:00 PM</created>
+  <modified>1/16/2026 4:00 PM</modified>
+
+  <name>e-mini_light</name>
+
+  <small>devices_sm/dimmer.gif</small>
+  <large>devices_lg/dimmer.gif</large>
+
+  <control>lua_gen</control>
+  <driver>DriverWorks</driver>
+
+  <composer_categories>
+    <category>Lighting</category>
+  </composer_categories>
+
+  <proxy proxybindingid="5001" name="e-mini_light">light_v2</proxy>
+
+  <config>
+    <script encryption="0" file="driver.lua" jit="0" />
+
+    <properties>
+      <property>
+        <name>Driver Version</name>
+        <type>STRING</type>
+        <default>000020</default>
+        <readonly>true</readonly>
+      </property>
+
+      <property>
+        <name>Debug</name>
+        <default>No</default>
+        <type>LIST</type>
+        <readonly>false</readonly>
+        <items>
+          <item>No</item>
+          <item>Yes</item>
+        </items>
+      </property>
+
+      <property>
+        <name>Last Light Command</name>
+        <type>STRING</type>
+        <default>---</default>
+        <readonly>true</readonly>
+      </property>
+
+      <property>
+        <name>Last Relay Command</name>
+        <type>STRING</type>
+        <default>---</default>
+        <readonly>true</readonly>
+      </property>
+    </properties>
+
+    <documentation file="www/documentation.rtf" />
+  </config>
+
+  <capabilities>
+    <on_off>True</on_off>
+    <has_leds>True</has_leds>
+    <has_button_events>false</has_button_events>
+    <load_group_support>false</load_group_support>
+    <supports_broadcast_scenes>True</supports_broadcast_scenes>
+    <advanced_scene_support>True</advanced_scene_support>
+    <hide_proxy_events>True</hide_proxy_events>
+    <hide_proxy_properties>True</hide_proxy_properties>
+    <buttons_are_virtual>false</buttons_are_virtual>
+    <set_level>False</set_level>
+    <ramp_level>False</ramp_level>
+  </capabilities>
+
+  <states/>
+  <conditionals/>
+
+  <connections>
+    <connection>
+      <id>1</id>
+      <type>1</type>
+      <connectionname>Relay</connectionname>
+      <consumer>True</consumer>
+      <linelevel>False</linelevel>
+      <audiosource>False</audiosource>
+      <videosource>False</videosource>
+      <classes>
+        <class>
+          <classname>RELAY</classname>
+        </class>
+      </classes>
+      <hidden>False</hidden>
+    </connection>
+    <connection>
+      <id>5101</id>
+      <facing>6</facing>
+      <connectionname>Light</connectionname>
+      <type>2</type>
+      <consumer>False</consumer>
+      <audiosource>False</audiosource>
+      <videosource>False</videosource>
+      <linelevel>False</linelevel>
+      <classes>
+        <class>
+          <classname>LIGHT_V2</classname>
+        </class>
+      </classes>
+    </connection>
+    <connection>
+      <id>301</id>
+      <facing>6</facing>
+      <connectionname>Top Button Link</connectionname>
+      <type>1</type>
+      <consumer>False</consumer>
+      <audiosource>False</audiosource>
+      <videosource>False</videosource>
+      <linelevel>True</linelevel>
+      <classes>
+        <class>
+          <classname>BUTTON_LINK</classname>
+        </class>
+      </classes>
+    </connection>
+    <connection>
+      <id>311</id>
+      <facing>6</facing>
+      <connectionname>Bottom Button Link</connectionname>
+      <type>1</type>
+      <consumer>False</consumer>
+      <audiosource>False</audiosource>
+      <videosource>False</videosource>
+      <linelevel>True</linelevel>
+      <classes>
+        <class>
+          <classname>BUTTON_LINK</classname>
+        </class>
+      </classes>
+    </connection>
+    <connection>
+      <id>321</id>
+      <facing>6</facing>
+      <connectionname>Toggle Button Link</connectionname>
+      <type>1</type>
+      <consumer>False</consumer>
+      <audiosource>False</audiosource>
+      <videosource>False</videosource>
+      <linelevel>True</linelevel>
+      <classes>
+        <class>
+          <classname>BUTTON_LINK</classname>
+        </class>
+      </classes>
+    </connection>
+  </connections>
+
+  <events>
+    <event>
+      <id>1</id>
+      <name>Level Change</name>
+      <description>Light Level Changes</description>
+    </event>
+  </events>
+
+  <version>000020</version>
+</devicedata>
